@@ -1,26 +1,16 @@
-abstract class User {
+type GoodUser = {
   name: string;
-  constructor(name: string) {
-    this.name = name;
-  }
+  gift: string;
+};
 
-  abstract greet(): string;
-  hello() {
-    console.log("hi hello");
-  }
-}
-
-class Employee extends User {
+type BadUser = {
   name: string;
-  constructor(name: string) {
-    super(name);
-    this.name = name;
-  }
+  ip: string;
+};
 
-  greet() {
-    return "hi " + this.name;
-  }
-}
+type User = GoodUser | BadUser;
 
-const person = new Employee("Sk Sajid");
-console.log(person.greet());
+const user: User = {
+  name: "sajid",
+  ip: "skdfklj",
+};

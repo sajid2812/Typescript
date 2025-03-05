@@ -1,21 +1,26 @@
-interface People {
+abstract class User {
   name: string;
-  age: number;
-  isLegal: () => boolean;
-}
-
-class Person implements People {
-  name: string;
-  age: number;
-
-  constructor(name: string, age: number) {
+  constructor(name: string) {
     this.name = name;
-    this.age = age;
   }
-  isLegal = () => {
-    return this.age >= 18;
-  };
+
+  abstract greet(): string;
+  hello() {
+    console.log("hi hello");
+  }
 }
 
-const person = new Person("Sk Sajid", 21);
-console.log(person.name, person.age, person.isLegal());
+class Employee extends User {
+  name: string;
+  constructor(name: string) {
+    super(name);
+    this.name = name;
+  }
+
+  greet() {
+    return "hi " + this.name;
+  }
+}
+
+const person = new Employee("Sk Sajid");
+console.log(person.greet());

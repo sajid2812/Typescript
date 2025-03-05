@@ -1,12 +1,20 @@
 "use strict";
-class Person {
-    constructor(name, age) {
-        this.isLegal = () => {
-            return this.age >= 18;
-        };
+class User {
+    constructor(name) {
         this.name = name;
-        this.age = age;
+    }
+    hello() {
+        console.log("hi hello");
     }
 }
-const person = new Person("Sk Sajid", 21);
-console.log(person.name, person.age, person.isLegal());
+class Employee extends User {
+    constructor(name) {
+        super(name);
+        this.name = name;
+    }
+    greet() {
+        return "hi " + this.name;
+    }
+}
+const person = new Employee("Sk Sajid");
+console.log(person.greet());

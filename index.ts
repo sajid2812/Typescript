@@ -1,3 +1,5 @@
-let x: number = 1;
+function greet(firstName: string) {
+  console.log(`Hello ${firstName}`);
+}
 
-console.log(x);
+greet('Sk Sajid')

@@ -1,24 +1,13 @@
-function greet(firstName: string) {
-  console.log(`Hello ${firstName}`);
+interface UserType {
+  firstName: string;
+  lastName: string;
+  age: number;
 }
 
-function sum(a: number, b: number): number {
-  return a + b;
-}
+function greet(user: UserType) {}
 
-function isValid(age: number): boolean {
-  return age >= 18;
-}
-
-function delayedFn() {
-  console.log("hello world");
-}
-
-function mainFunction(fn: () => void) {
-  setTimeout(fn, 1000);
-}
-
-// greet("Sk Sajid");
-// console.log(sum(2, 3));
-// console.log(isValid(19));
-mainFunction(delayedFn);
+let user: UserType = {
+  firstName: "Sk",
+  lastName: "Sajid",
+  age: 21,
+};

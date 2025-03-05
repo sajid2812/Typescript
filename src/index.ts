@@ -1,11 +1,17 @@
+interface Address {
+  city: string;
+  country: string;
+  pincode: number;
+}
+
 interface User {
   name: string;
   age: number;
-  address: {
-    city: string;
-    country: string;
-    pincode: number;
-  };
+  address: Address;
+}
+
+interface Office {
+  address: Address;
 }
 
 const user: User = {
@@ -22,4 +28,4 @@ function isLegal(user: User): boolean {
   return user.age >= 18;
 }
 
-console.log(isLegal(user))
+console.log(isLegal(user));

@@ -1,5 +1,14 @@
 "use strict";
-function greet(user) {
-    console.log("hello " + user.name);
+const user = {
+    name: "Sk Sajid",
+    age: 21,
+    address: {
+        city: "Kolkata",
+        country: "India",
+        pincode: 700088,
+    },
+};
+function isLegal(user) {
+    return user.age >= 18;
 }
-greet({ name: "Sk Sajid", age: 3 });
+console.log(isLegal(user));

@@ -1,13 +1,25 @@
-interface UserType {
-  firstName: string;
-  lastName: string;
+interface User {
+  name: string;
   age: number;
+  address: {
+    city: string;
+    country: string;
+    pincode: number;
+  };
 }
 
-function greet(user: UserType) {}
-
-let user: UserType = {
-  firstName: "Sk",
-  lastName: "Sajid",
+const user: User = {
+  name: "Sk Sajid",
   age: 21,
+  address: {
+    city: "Kolkata",
+    country: "India",
+    pincode: 700088,
+  },
 };
+
+function isLegal(user: User): boolean {
+  return user.age >= 18;
+}
+
+console.log(isLegal(user))

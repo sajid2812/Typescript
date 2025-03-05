@@ -1,31 +1,21 @@
-interface Address {
-  city: string;
-  country: string;
-  pincode: number;
-}
-
-interface User {
+interface People {
   name: string;
   age: number;
-  address: Address;
+  isLegal: () => boolean;
 }
 
-interface Office {
-  address: Address;
+class Person implements People {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+  isLegal = () => {
+    return this.age >= 18;
+  };
 }
 
-const user: User = {
-  name: "Sk Sajid",
-  age: 21,
-  address: {
-    city: "Kolkata",
-    country: "India",
-    pincode: 700088,
-  },
-};
-
-function isLegal(user: User): boolean {
-  return user.age >= 18;
-}
-
-console.log(isLegal(user));
+const person = new Person("Sk Sajid", 21);
+console.log(person.name, person.age, person.isLegal());

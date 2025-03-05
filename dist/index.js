@@ -1,14 +1,12 @@
 "use strict";
-const user = {
-    name: "Sk Sajid",
-    age: 21,
-    address: {
-        city: "Kolkata",
-        country: "India",
-        pincode: 700088,
-    },
-};
-function isLegal(user) {
-    return user.age >= 18;
+class Person {
+    constructor(name, age) {
+        this.isLegal = () => {
+            return this.age >= 18;
+        };
+        this.name = name;
+        this.age = age;
+    }
 }
-console.log(isLegal(user));
+const person = new Person("Sk Sajid", 21);
+console.log(person.name, person.age, person.isLegal());

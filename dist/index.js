@@ -1,5 +1,10 @@
 "use strict";
-const updateUser = (user) => {
-    console.log(`Name: ${user.name}, Email: ${user.email}`);
+// type User = {
+//   readonly name: string;
+//   readonly age: number;
+// };
+const user = {
+    name: "Sk Sajid",
+    age: 24,
 };
-updateUser({ name: "Sk Sajid", age: 21, email: "ssk73573@gmail.com" });
+console.log(user);

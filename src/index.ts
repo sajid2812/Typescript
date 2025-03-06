@@ -7,7 +7,9 @@ interface User {
 }
 
 type UserProfile = Pick<User, "name" | "age" | "email">;
-const updateUser = (user: UserProfile) => {
+type UpdateProfileOptional = Partial<UserProfile>;
+
+const updateUser = (user: UpdateProfileOptional) => {
   console.log(`Name: ${user.name}, Email: ${user.email}`);
 };
 

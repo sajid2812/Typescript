@@ -1,16 +1,16 @@
-// type User = {
-//   readonly name: string;
-//   readonly age: number;
-// };
-
 type User = {
+  id: string;
   name: string;
-  age: number;
 };
 
-const user: Readonly<User> = {
-  name: "Sk Sajid",
-  age: 24,
+type Users = Record<string, User>;
+
+const users: Users = {
+  abc: {
+    id: "abc",
+    name: "sajid",
+  },
 };
 
-console.log(user);
+const map = new Map<string, User>();
+map.set("123", { id: "123", name: "sk sajid" });

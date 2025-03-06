@@ -1,16 +1,8 @@
-type User = {
-  id: string;
-  name: string;
+type EventType = "click" | "scroll" | "mousemove";
+type ExcludeEvent = Exclude<EventType, "scroll">;
+
+const handleEvent = (event: ExcludeEvent) => {
+  console.log(`Handling event: ${event}`);
 };
 
-type Users = Record<string, User>;
-
-const users: Users = {
-  abc: {
-    id: "abc",
-    name: "sajid",
-  },
-};
-
-const map = new Map<string, User>();
-map.set("123", { id: "123", name: "sk sajid" });
+handleEvent("click");

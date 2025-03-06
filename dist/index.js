@@ -1,10 +1,5 @@
 "use strict";
-// type User = {
-//   readonly name: string;
-//   readonly age: number;
-// };
-const user = {
-    name: "Sk Sajid",
-    age: 24,
+const handleEvent = (event) => {
+    console.log(`Handling event: ${event}`);
 };
-console.log(user);
+handleEvent("click");
